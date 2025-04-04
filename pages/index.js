@@ -1,113 +1,90 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import localFont from "next/font/local";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="h-screen w-screen flex flex-col font-sans text-black shadow-xl">
+      <div className="h-[10%] bg-white w-full flex items-center p-4 shadow-xl">
+        <div className="flex">
+          <img
+            src="/nestlogo.jpeg"
+            alt="Centered Image"
+            class="mb-4 mx-auto w-20 p-4"
+          />
+          <p className="text-xl font-bold p-10">index</p>
+        </div>
+
+        <input
+          type="text"
+          className="border border-gray-300 rounded-md ml-auto p-2 text-sm w-40"
+          placeholder="Search..."
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <button className="ml-4 bg-blue-500 text-white px-4 py-2 rounded-md text-sm shadow-lg">
+          Logout
+        </button>
+      </div>
+
+      <div className="h-[90%] w-full flex">
+        <div className="w-[15%] bg-white h-full p-4 shadow-2xl">
+          <button
+            className="font-medium text-left mb-3 w-full"
+            onClick={() => router.back()}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Back
+          </button>
+
+          <a
+            href="http://localhost:3000/task2"
+            className="font-medium text-left mb-3 w-full block"
+          >
+            Task2
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="http://localhost:3000/task3"
+            className="font-medium text-left mb-3 w-full block"
           >
-            Read our docs
+            Task3
+          </a>
+          <a
+            href="http://localhost:3000/week3"
+            className="font-medium text-left w-full block"
+          >
+            Week3
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="w-[85%] h-full bg-gray-50 p-6">
+          <p className="text-2xl font-semibold mb-6">Minori 11v</p>
+
+          <a
+            href="http://localhost:3000/task1"
+            className="font-medium text-left mb-3 w-full block bg-white p-4 shadow-xl rounded-md"
+          >
+            Task1
+          </a>
+
+          <a
+            href="http://localhost:3000/task2"
+            className="font-medium text-left mb-3 w-full block bg-white p-4 shadow-xl rounded-md"
+          >
+            Task2
+          </a>
+          <a
+            href="http://localhost:3000/week3"
+            className="font-medium text-left mb-3 w-full block bg-white p-4 shadow-xl rounded-md"
+          >
+            Task3
+          </a>
+          <a
+            href="http://localhost:3000/helpp"
+            className="font-medium text-left w-full block bg-white p-4 shadow-xl rounded-md"
+          >
+            Week4
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
